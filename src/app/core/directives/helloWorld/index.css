@@ -1,0 +1,14 @@
+.helloWorld-container {
+  font-size: 1rem;
+  padding: 1em;
+  width: 600px;
+  margin: 5em auto;
+  background-color: white;
+  border: 1px solid red
+}
+
+.helloWorld-timer {
+  font-size: .6em;
+  font-style: italic;
+  color: #555
+}
