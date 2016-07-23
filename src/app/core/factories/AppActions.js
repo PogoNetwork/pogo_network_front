@@ -38,6 +38,14 @@ angular.module('core')
         subscribeOnce(action, cb) {
           emitter.once(namespace + action, cb);
         },
+
+        subscribeChange(cb) {
+          emitter.on(namespace + 'CHANGE', cb);
+        },
+
+        subscribeInput(cb) {
+          emitter.on(namespace + 'INPUT', cb);
+        },
       };
     };
 

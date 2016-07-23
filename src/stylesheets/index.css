@@ -1,2 +1,3 @@
 @import 'common.css';
 @import '../app/core/directives/helloWorld/index.css';
+@import '../app/core/directives/mapLocation/index.css';

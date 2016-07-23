@@ -3,11 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>PogoNetwork</title>
+  <meta name="viewport" content="initial-scale=1.0">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body ng-app="core">
-  <section class="app-container" ui-view></section>
+  <section class="app-container" ui-view="main"></section>
+  <section class="view-container" ui-view="action"></section>
+  <menu class="navigation-container"></menu>
   <script src="js/vendor.min.js"></script>
+  <script src="js/templates.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

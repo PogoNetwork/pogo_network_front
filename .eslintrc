@@ -6,6 +6,7 @@
   },
   "globals": {
     "angular": 1,
+    "console": 1,
     "EventEmitter2": 1
   }
 }

@@ -1,5 +1,9 @@
 angular
-  .module('core', ['ui.router', 'ngAria'])
+  .module('core', [
+    'templates',
+    'ui.router', 'ngAria',
+    'user', 'menu',
+  ])
   .config(($stateProvider, $urlRouterProvider, $compileProvider, $httpProvider) => {
     $compileProvider.debugInfoEnabled('%activeCompiler%');
     $urlRouterProvider.otherwise('/');
@@ -7,6 +11,13 @@ angular
     $stateProvider
       .state('map', {
         url: '/',
-        templateUrl: 'core.map.states.html'
+        views: {
+          main: {
+            templateUrl: 'core.map.states.html',
+          },
+          action: {
+
+          }
+        },
       });
   });

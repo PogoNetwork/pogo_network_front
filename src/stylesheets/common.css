@@ -1,3 +1,22 @@
-body {
-  background-color: blue
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {position: relative}
+
+.navigation-container {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  z-index: 24;
+  width: 80%;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto
 }

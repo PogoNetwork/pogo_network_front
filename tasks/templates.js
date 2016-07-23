@@ -26,7 +26,8 @@ module.exports = function() {
     .src(glob)
     .pipe(tap(file => {
       const dirname = path.dirname(file.relative);
-      const module = dirname.split(sep)[0];
+      const names = dirname.split(sep);
+      const module = /directives/.test(dirname) ? `${names[0]}.${names[2]}` : names[0];
       // ex: core.map.states.html
       file.path = `${module}.${path.basename(file.relative)}`;
     }))
