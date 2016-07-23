@@ -1,9 +1,7 @@
 angular.module('core')
   .directive('mapLocation', (actions) => {
-
     const API_KEY = '';
     window.initMap = () => actions('map').dispatchInput();
-
 
     const script = document.createElement('SCRIPT');
     script.src = `//maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=initMap`;
