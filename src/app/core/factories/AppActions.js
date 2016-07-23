@@ -1,23 +1,22 @@
 angular.module('core')
-  .factory('Actions', () => {
+  .factory('actions', () => {
     const emitter = new EventEmitter2();
     emitter.setMaxListeners(0);
 
     // Create factory cache
     const map = Object.create(null);
 
-    const AppActionFactory = name => {
-
+    const factory = (name) => {
       const namespace = name ? name + '.' : '';
-      const dispatch = ({type, state = {}}) => emitter.emit(namespace + type, state || {});
+      const dispatch = ({ type, state = {} }) => emitter.emit(namespace + type, state || {});
 
       return map[name] = {
         dispatch,
         dispatchChange(state = {}) {
-          dispatch({type: 'CHANGE', state});
+          dispatch({ type: 'CHANGE', state });
         },
         dispatchInput(state = {}) {
-          dispatch({type: 'INPUT', state});
+          dispatch({ type: 'INPUT', state });
         },
 
         /**
@@ -38,9 +37,9 @@ angular.module('core')
          */
         subscribeOnce(action, cb) {
           emitter.once(namespace + action, cb);
-        }
+        },
       };
     };
 
-    return name => map[name] || AppActionFactory(name);
+    return name => map[name] || factory((name));
   });

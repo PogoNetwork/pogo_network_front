@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "gulp",
-    "lint": "eslint src/js/**/**/*.js  --quiet"
+    "lint": "eslint src/app/**/**/*.js  --quiet"
   },
   "keywords": [],
   "author": "dhoko",
@@ -18,12 +18,19 @@
     "browser-sync": "^2.13.0",
     "cssnano": "^3.7.3",
     "eslint": "^3.1.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.11.1",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "^5.2.2",
     "eventemitter2": "^2.0.0",
     "gulp": "^3.9.1",
+    "gulp-angular-htmlify": "^2.3.0",
+    "gulp-angular-templatecache": "^2.0.0",
     "gulp-babel": "^6.1.2",
     "gulp-cached": "^1.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-convert": "^0.2.0",
+    "gulp-htmlmin": "^2.0.0",
     "gulp-ignore": "^2.0.1",
     "gulp-ng-annotate": "^2.0.0",
     "gulp-plumber": "^1.1.0",

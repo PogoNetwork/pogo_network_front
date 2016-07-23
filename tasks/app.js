@@ -5,6 +5,7 @@ const gulp        = require('gulp'),
     concat      = require('gulp-concat'),
     plumber     = require('gulp-plumber'),
     uglify      = require('gulp-uglify'),
+    replace     = require('gulp-replace'),
     sourcemaps  = require('gulp-sourcemaps'),
     cached      = require('gulp-cached'),
     remember    = require('gulp-remember'),
@@ -38,7 +39,7 @@ module.exports = function() {
       remove: true,
       single_quotes: true
     }))
-    .pipe(gutil.env.dist ? replace('\'%activeCompiler%\'',false) : gutil.noop())
+    .pipe(replace('\'%activeCompiler%\'', !gutil.env.dist))
     .pipe(isDist(uglify, {
       output: {
         quote_style: 1

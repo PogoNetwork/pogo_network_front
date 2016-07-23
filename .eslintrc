@@ -1,0 +1,11 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "no-return-assign": "off",
+    "prefer-template": "off"
+  },
+  "globals": {
+    "angular": 1,
+    "EventEmitter2": 1
+  }
+}
