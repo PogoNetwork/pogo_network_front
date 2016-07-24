@@ -9,6 +9,10 @@ angular.module('core')
     const factory = (name) => {
       const namespace = name ? name + '.' : '';
       const dispatch = ({ type, state = {} }) => emitter.emit(namespace + type, state || {});
+      const subscribe = (action, cb) => {
+        emitter.on(namespace + action, cb);
+        return () => emitter.off(namespace + action, cb);
+      };
 
       return map[name] = {
         dispatch,
@@ -25,10 +29,7 @@ angular.module('core')
          * @param  {Function} cb
          * @return {Function}          unsubscribe
          */
-        subscribe(action, cb) {
-          emitter.on(namespace + action, cb);
-          return () => emitter.off(namespace + action, cb);
-        },
+        subscribe,
         /**
          * Subscribe to an action once, auto destroy after the first call
          * @param  {String}   action ACTION_NAME
@@ -40,11 +41,11 @@ angular.module('core')
         },
 
         subscribeChange(cb) {
-          emitter.on(namespace + 'CHANGE', cb);
+          return subscribe('CHANGE', cb);
         },
 
         subscribeInput(cb) {
-          emitter.on(namespace + 'INPUT', cb);
+          return subscribe('INPUT', cb);
         },
       };
     };

@@ -5,7 +5,7 @@ angular.module('menu')
     profileApi
       .getQrCode('google.fr')
       .then((data) => {
-        console.log(data);
+        console.log('LOADED');
       })
       .catch((data) => {
         console.log(data);

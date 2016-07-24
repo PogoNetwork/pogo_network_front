@@ -9,15 +9,19 @@ angular
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-      .state('map', {
+      .state('core', {
+        abstract: true,
         url: '/',
         views: {
           main: {
             templateUrl: 'core.map.states.html',
           },
-          action: {
-
-          }
+          'action@core': {
+            template: '',
+          },
         },
+      })
+      .state('core.map', {
+        url: '',
       });
   });

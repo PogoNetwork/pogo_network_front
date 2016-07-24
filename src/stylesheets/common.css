@@ -1,10 +1,18 @@
+*, ::before, ::after {box-sizing: border-box}
+html {
+  font-family: 'Arial';
+}
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-body {position: relative}
+body {
+  position: relative;
+  font-family: 'Droid Sans';
+  color: #333333
+}
 
 .navigation-container {
   position: absolute;
@@ -19,4 +27,40 @@ body {position: relative}
   justify-content: space-around;
   align-items: center;
   margin: 0 auto
+}
+
+.view-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background: white;
+  width: 90%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  top: 15%;
+  bottom: 0;
+  transition: transform cubic-bezier(0.5, 1.1, 0.5, 1.1) .3s .1s;
+  transition-delay: 1s;
+  will-change: transform;
+  box-shadow: 0 -.1rem 1rem .5rem rgba(0, 0, 0, .1);
+  z-index: 42
+
+}
+.view-container:empty {
+  transform: translate(0, 100%)
+}
+
+.state-title {
+  text-align: center;
+  margin: .5rem 0 0
+}
+
+.state-title::after,
+.state-title::before {content: ' ~ '}
+
+.state-button-close {
+  margin-top: auto;
+  align-self: center;
 }
