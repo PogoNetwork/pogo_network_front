@@ -1,0 +1,20 @@
+.teamList-container {
+  font-size: 1rem;
+  padding:
+}
+
+.teamList-list {
+  margin: 1em;
+  padding: 0
+}
+
+.teamList-item {
+  list-style: none;
+  padding: .7em
+}
+
+.teamList-item:nth-child(odd) {
+  background-color: #eee;
+  border-bottom: 1px solid;
+  border-color: #ddd
+}

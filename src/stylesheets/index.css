@@ -3,4 +3,8 @@
 @import '../app/core/directives/mapLocation/index.css';
 @import '../app/profile/directives/aboutMe/index.css';
 @import '../app/profile/directives/qrcode/index.css';
+@import '../app/team/directives/teamList/index.css';
+
+
+
 @import '../app/profile/states/profile.css';
