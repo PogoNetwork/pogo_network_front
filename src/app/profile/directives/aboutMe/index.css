@@ -1,0 +1,19 @@
+.aboutMe-container {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  margin: 0
+}
+
+.aboutMe-picture {
+  display: block;
+  width: 8em;
+  height: 8em;
+  border-radius: 8em;
+  border: .3em solid white;
+  box-shadow: 0 0 0 1px #e0e0e0;
+  align-self: center
+}
+
+.aboutMe-legend {padding: 1em}
+.aboutMe-title {font-size: 1.5em}

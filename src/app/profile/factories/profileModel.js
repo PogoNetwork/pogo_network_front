@@ -9,5 +9,18 @@ angular.module('profile')
         }))
         .catch((error) => actions('profile').dispatchChange({ type: 'qrcode.error', error }));
     };
-    return { qrcode };
+
+    const getUser = () => {
+      actions('profile').dispatchChange({
+        type: 'about.success',
+        model: {
+          pseudo: 'Monique',
+          avatar: {
+            url: '//unsplash.it/300/300',
+          },
+        },
+      });
+    };
+
+    return { qrcode, getUser };
   });
