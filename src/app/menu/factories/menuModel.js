@@ -1,6 +1,16 @@
 angular.module('menu')
-  .factory('menuModel', (actions) => {
+  .factory('menuModel', (actions, profileApi) => {
     const RADIO = actions('menu');
+
+    profileApi
+      .getQrCode('google.fr')
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((data) => {
+        console.log(data);
+      });
+
 
     RADIO
       .subscribeInput(({ type }) => {

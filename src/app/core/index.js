@@ -2,7 +2,7 @@ angular
   .module('core', [
     'templates',
     'ui.router', 'ngAria',
-    'user', 'menu',
+    'user', 'menu', 'profile',
   ])
   .config(($stateProvider, $urlRouterProvider, $compileProvider, $httpProvider) => {
     $compileProvider.debugInfoEnabled('%activeCompiler%');
