@@ -24,4 +24,5 @@ angular
       .state('core.map', {
         url: '',
       });
-  });
+  })
+  .run((geoLocation) => geoLocation.locate());

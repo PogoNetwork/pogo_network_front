@@ -1,4 +1,8 @@
 const gulp  = require('gulp');
+const gutil = require('gulp-util');
+
+const config = require('./.config.json');
+gutil.env.config = config;
 
 // Default task : Open url, lauch server, livereaload
 gulp.task('default',['vendor', 'layout','scripts','styles'], () => {

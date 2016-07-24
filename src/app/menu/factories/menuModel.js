@@ -1,20 +1,10 @@
 angular.module('menu')
-  .factory('menuModel', (actions, profileApi) => {
+  .factory('menuModel', (actions, mapModel) => {
     const RADIO = actions('menu');
-
-    profileApi
-      .getQrCode('google.fr')
-      .then((data) => {
-        console.log('LOADED');
-      })
-      .catch((data) => {
-        console.log(data);
-      });
-
 
     RADIO
       .subscribeInput(({ type }) => {
-        console.log(type);
+        mapModel.addMarker(45, 5);
       });
 
     const init = angular.noop;

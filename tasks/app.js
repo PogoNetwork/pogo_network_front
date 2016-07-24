@@ -40,6 +40,7 @@ module.exports = function() {
       single_quotes: true
     }))
     .pipe(replace('\'%activeCompiler%\'', !gutil.env.dist))
+    .pipe(replace('{{API_KEY}}', gutil.env.config.API_KEY))
     .pipe(isDist(uglify, {
       output: {
         quote_style: 1
